@@ -3,29 +3,41 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>CSS Flex 布局示例</title>  
+    <title>名侦探学院</title>  
     <style>  
-        .flex-container {  
-            display: flex;  
-            justify-content: center; /* 水平居中 */  
-            align-items: center; /* 垂直居中 */  
-            height: 100vh; /* 容器高度设置为视口高度 */  
-            background-color: #7aa6e0; /* 背景色 */  
+        body, html {  
+            height: 100%;  
+            margin: 0;  
+            overflow: hidden; /* 隐藏滚动条 */  
         }  
   
-        .flex-item {  
-            text-align: center; /* 文本居中 */  
-            color: #c00f0f; /* 文本颜色 */  
-            font-size: 24px; /* 字体大小 */  
-            font-weight: bold; /* 字体加粗 */  
+        .container {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100%;  
+            background: url('path_to_your_image.jpg') no-repeat center center fixed; /* 替换为你的背景图路径 */  
+            background-size: cover; /* 背景图覆盖整个容器 */  
+        }  
+  
+        .content {  
+            text-align: center;  
+            color: white; /* 根据背景图颜色调整文字颜色 */  
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景以突出文字 */  
+            padding: 20px; /* 文字周围的内边距 */  
         }  
     </style>  
 </head>  
 <body>  
-    <div class="flex-container">  
-        <div class="flex-item">  
-            <p>蒲熠星，<br>毕业于南京大学本科<br>约翰霍普金斯大学硕士研究生</p>  
+    <div class="container">  
+        <div class="content">  
+            <h1>有人自林中坠落</h1>  
+              <p>作者：蒲熠星</p>
+            <p<br>毕业于南京大学本科<br>约翰霍普金斯大学硕士研究生</p>  
+         
         </div>  
     </div>  
 </body>  
 </html>
+            
+ 
