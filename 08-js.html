@@ -1,100 +1,109 @@
-<!DOCTYPE html>  
-<html lang="zh">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>红楼梦金陵十二钗</title>  
-    <style>  
-        body {  
-            font-family: '宋体', serif;  
-            background-image: url('red-chamber-cover.jpg'); /* 替换为你的红楼梦封面图片 */  
-            background-repeat: no-repeat;  
-            background-position: center;  
-            background-size: cover;  
-            margin: 0;  
-            padding: 0;  
-        }  
-        .container {  
-            text-align: center;  
-            padding: 50px;  
-        }  
-        h1 {  
-            color: red;  
-            margin: 0;  
-        }  
-        .character {  
-            margin-bottom: 30px;  
-        }  
-        .photo {  
-            width: 150px;  
-            height: 200px;  
-            background-size: cover;  
-            background-position: center;  
-            margin-right: 20px;  
-            float: left;  
-        }  
-        .info {  
-            display: inline-block;  
-        }  
-        button {  
-            padding: 10px 20px;  
-            font-size: 16px;  
-        }  
-    </style>  
-</head>  
-<body>  
-    <div class="container">  
-        <h1>红楼梦金陵十二钗</h1>  
-        <div id="characterInfo" class="character"></div>  
-        <button onclick="generateCharacter()">生成人物介绍</button>  
-    </div>  
-  
-    <script>  
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红楼梦金陵十二钗</title>
+    <style>
+        body {
+            font-family: '宋体', serif;
+            background-image: url('red-chamber-cover.jpg');
+            /* 替换为你的红楼梦封面图片 */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: red;
+            margin: 0;
+        }
+
+        .character {
+            margin-bottom: 30px;
+        }
+
+        .photo {
+            width: 150px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            margin-right: 20px;
+            float: left;
+        }
+
+        .info {
+            display: inline-block;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>红楼梦金陵十二钗</h1>
+        <div id="characterInfo" class="character"></div>
+        <button onclick="generateCharacter()">生成人物介绍</button>
+    </div>
+
+    <script>
         // 模拟金陵十二钗的人物数据  
-        const characters = [  
-            {  
-                name: '林黛玉',  
-                photo: 'lin-dai-yu.jpg', /* 替换为你的图片资源 */  
-                birth: '贾府',  
-                alias: '颦儿',  
-                character: '聪明伶俐，情感丰富',  
-                judgement: '可叹停机德，堪怜咏絮才。玉带林中挂，金簪雪里埋。'  
-            },  
-            {  
-                name: '薛宝钗',  
-                photo: 'xue-bao-chai.jpg', /* 替换为你的图片资源 */  
-                birth: '薛家',  
-                alias: '蘅芜君',  
-                character: '贤淑温婉，知书达理',  
-                judgement: '可叹停机德，堪怜咏絮才。玉带林中挂，金簪雪里埋。'  
-            },  
-            {  
-                name: '贾元春',  
-                photo: 'jia-yuan-chun.jpg', /* 替换为你的图片资源 */  
-                birth: '贾府',  
-                alias: '贤德妃',  
-                character: '端庄贤淑，贵气逼人',  
-                judgement: '二十年来辨是非，榴花开处照宫闱。三春争及初春景，虎兕相逢大梦归。'  
-            },  
+        const characters = [
+            {
+                name: '林黛玉',
+                photo: 'lin-dai-yu.jpg', /* 替换为你的图片资源 */
+                birth: '贾府',
+                alias: '颦儿',
+                character: '聪明伶俐，情感丰富',
+                judgement: '可叹停机德，堪怜咏絮才。玉带林中挂，金簪雪里埋。'
+            },
+            {
+                name: '薛宝钗',
+                photo: 'xue-bao-chai.jpg', /* 替换为你的图片资源 */
+                birth: '薛家',
+                alias: '蘅芜君',
+                character: '贤淑温婉，知书达理',
+                judgement: '可叹停机德，堪怜咏絮才。玉带林中挂，金簪雪里埋。'
+            },
+            {
+                name: '贾元春',
+                photo: 'jia-yuan-chun.jpg', /* 替换为你的图片资源 */
+                birth: '贾府',
+                alias: '贤德妃',
+                character: '端庄贤淑，贵气逼人',
+                judgement: '二十年来辨是非，榴花开处照宫闱。三春争及初春景，虎兕相逢大梦归。'
+            },
             // ... 添加其他人物数据，确保每个对象都有name, photo, birth, alias, character, judgement属性  
-        ];  
-  
+        ];
+
         // 生成人物介绍的函数  
-        function generateCharacter() {  
+        function generateCharacter() {
             const index = Math.floor(Math.random() * characters.length); // 随机选择一个人物  
-            const character = characters[index];  
-  
-            const characterInfo = document.getElementById('characterInfo');  
-            characterInfo.innerHTML = ''; // 清空之前的内容  
-  
+            const character = characters[index];
+
+            const characterInfo = document.getElementById('characterInfo');
+            characterInfo.innerHTML = ''; // 清空 
+
             // 创建并添加人物照片  
-            const photoElement = document.createElement('div');  
-            photoElement.className = 'photo';  
-            photoElement.style.backgroundImage = `url('${character.photo}')`;  
-            characterInfo.appendChild(photoElement);  
-  
+            const photoElement = document.createElement('div');
+            photoElement.className = 'photo';
+            photoElement.style.backgroundImage = `url('${character.photo}')`;
+            characterInfo.appendChild(photoElement);
+
             // 创建并添加人物信息  
-            const infoElement = document.createElement('div');  
-            infoElement.className = 'info';  
+            const infoElement = document.createElement('div');
+            infoElement.className = 'info';
             infoElement.innerHTML = `  
                 <h2>${character.name}</
