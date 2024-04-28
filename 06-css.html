@@ -1,57 +1,60 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>CSS Transformations Example</title>  
-<style>  
-    .box {  
-        width: 100px;  
-        height: 100px;  
-        background-color: skyblue;  
-        /* 初始状态，不应用任何变形 */  
-        /* transform: none; */  
-    }  
-  
-    .box.rotated {  
-        /* 旋转45度 */  
-        transform: rotate(45deg);  
-    }  
-  
-    .box.scaled {  
-        /* 缩放，宽度和高度都是原始大小的1.5倍 */  
-        transform: scale(2);  
-    }  
-  
-    .box.translated {  
-        /* 移动，向右移动50px，向下移动100px */  
-        transform: translate(50px, 100px);  
-    }  
-  
-    .box.skewed {  
-        /* 倾斜，X轴倾斜30度，Y轴倾斜20度 */  
-        transform: skew(30deg, 20deg);  
-    }  
-</style>  
-</head>  
-<body>  
-  
-<h1>CSS Transformations Example</h1>  
-  
-<!-- 没有变形的盒子 -->  
-<div class="box">Original</div>  
-  
-<!-- 旋转的盒子 -->  
-<div class="box rotated">Rotated</div>  
-  
-<!-- 缩放的盒子 -->  
-<div class="box scaled">Scaled</div>  
-  
-<!-- 平移的盒子 -->  
-<div class="box translated">Translated</div>  
-  
-<!-- 倾斜的盒子 -->  
-<div class="box skewed">Skewed</div>  
-  
-</body>  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transformations Example</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            /* 初始状态，不应用任何变形 */
+            /* transform: none; */
+        }
+
+        .box.rotated {
+            /* 旋转45度 */
+            transform: rotate(45deg);
+        }
+
+        .box.scaled {
+            /* 缩放，宽度和高度都是原始大小的1.5倍 */
+            transform: scale(2);
+        }
+
+        .box.translated {
+            /* 移动，向右移动50px，向下移动100px */
+            transform: translate(50px, 100px);
+        }
+
+        .box.skewed {
+            /* 倾斜，X轴倾斜30度，Y轴倾斜20度 */
+            transform: skew(30deg, 20deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Transformations Example</h1>
+
+    <!-- 没有变形的盒子 -->
+    <div class="box">Original</div>
+
+    <!-- 旋转的盒子 -->
+    <div class="box rotated">Rotated</div>
+
+    <!-- 缩放的盒子 -->
+    <div class="box scaled">Scaled</div>
+
+    <!-- 平移的盒子 -->
+    <div class="box translated">Translated</div>
+
+    <!-- 倾斜的盒子 -->
+    <div class="box skewed">Skewed</div>
+
+</body>
+
 </html>
